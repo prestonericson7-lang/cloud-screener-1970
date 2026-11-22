@@ -24,3 +24,20 @@ a disk looks the same from every angle.
 normal, 315 degrees.
 
 **E6 (70%).** One patch takes under 0.2 seconds on the CPU (the eye is small; the GPUs stay with other work).
+
+## Grades, 8:48 AM (MEASURED; results/testcards_run1.json and run2.json)
+
+- **E1: HELD.** Two runs, the same 43 integers on all three cards (fingerprints f3826e214a75, 3fe2c75d7bf1, 3dd76ffc5c79).
+- **E2: HELD.** The worst relative difference from the 64-bit floating-point FFT is 0.04182%, against the 0.5% allowed.
+- **E3: HELD.** The grating puts 99.999% of the ring half's power in ring 2 and 99.999% of the wedge half's in wedge 5.
+- **E4: FAILED.** The disk's wedges differ by a factor of 34.4, not 1.3. The cause is mine: nearly all of a 20-pixel disk's light lies within
+  about 4 frequency bins of the center, and on a 128-point grid those few bins cannot be shared evenly among 34 wedges, so the wedges that own them
+  take almost everything. Litton's wedges were continuous; these are pixels. The prediction misjudged the grid, not the optics.
+- **E5: HELD.** The diagonal bar puts 100.000% of the wedge half's power in wedge 25, which holds 315 degrees.
+- **E6: HELD.** 9.9 milliseconds a patch on the CPU.
+
+## A change, with its prediction filed first (8:48 AM)
+
+**W1 (60%).** One change only: the wedges begin outside ring 1 (beyond 17.5 frequency bins), where every wedge owns enough bins, and the bins
+inside go to no wedge (the rings still read them). With that change the disk's wedges differ by no more than a factor of 1.3, and E1, E2, E3 and
+E5 still hold.
