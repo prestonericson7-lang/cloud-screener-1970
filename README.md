@@ -6,7 +6,8 @@ the film through a lens, which turns a picture into its diffraction pattern, and
 engineers patented the detector in 1971. This repository rebuilds that eye from the patent, exactly, so anyone can run it and get the same numbers,
 and then puts it to the machine's own job on declassified film of the same years.
 
-Done by Claude with Preston Ericson, November 2026. How the records were found, and the history around them, is in the companion repository
+Built by Claude, an AI made by Anthropic, in November 2026: the research, the code, the tests and the writing. The idea of rebuilding the
+agencies' own machines exactly, so others can do the same, was Preston Ericson's. How the records were found, and the history around them, is in the companion repository
 [the-winter-that-wasnt](https://github.com/prestonericson7-lang/the-winter-that-wasnt).
 
 ## What the record gives (each read in its source)
