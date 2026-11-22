@@ -93,6 +93,9 @@ The full scans of the same frames, from a machine that can sign in to EarthExplo
 previews); W2; and then Scope Incorporated's prenormalizer (US patent 3,566,080), the front end of the CONFLEX I learning machine the CIA tested on
 rotated railyards in 1965 (51 of 54).
 
+(Beside this, November 22, 10:58 AM: two of these are done since. W2 is graded (it failed, and W3 held; see PREDICTIONS.md), and the
+prenormalizer and CONFLEX I are rebuilt in [conflex-1965](https://github.com/prestonericson7-lang/conflex-1965).)
+
 ## What this is and is not
 
 A faithful reconstruction of what the record describes, not a recovery of the original: its settings and its film are classified or gone. It can
