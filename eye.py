@@ -14,6 +14,7 @@ RINGS, WEDGES = 8, 34   # Litton's counts: "eight concentric annular hemi-ring o
 R_CENTER4 = 8      # center spot radius, in quarter frequency bins (2 bins). ASSUMPTION: the patent gives no size.
 R_MAX4 = 4 * (N // 2)   # outer edge of the detector: the Nyquist radius, 64 bins
 RING_W4 = (R_MAX4 - R_CENTER4) // RINGS   # 31 quarter bins (7.75 bins). ASSUMPTION: equal-width rings.
+WEDGE_R_MIN4 = R_CENTER4 + 2 * RING_W4   # wedges begin beyond ring 1 (17.5 bins): change W1, see PREDICTIONS.md
 assert R_CENTER4 + RINGS * RING_W4 == R_MAX4
 
 def _round_half_up(x):
@@ -33,7 +34,7 @@ def table_sha():
     return h.hexdigest()
 
 TABLE_SHA = "0f01140bf9f8b057b707beef007566450be92f6bd39ea432fc1350550fe31789"
-LAYOUT_SHA = "2f3a8a941b1a36afbd74e7405fb31b20a68cf6eca8e129d532a194bec0cf3ff6"
+LAYOUT_SHA = "e3548f165b14681596c7e0eb64020c86f62b7d0a10452c72c0c3b58192affdd1"
 if table_sha() != TABLE_SHA:
     raise RuntimeError("this machine rounds the cosine table differently; the outputs would not match the published ones")
 
@@ -74,7 +75,7 @@ def _layout():
                 while r2_16 > (R_CENTER4 + (j + 1) * RING_W4) ** 2:
                     j += 1
                 ring[v, u] = j
-            else:                                            # the wedge half: count boundaries at or behind this bin
+            elif r2_16 > WEDGE_R_MIN4 * WEDGE_R_MIN4:       # the wedge half, beyond ring 1: count boundaries at or behind this bin
                 wedge[v, u] = sum(1 for j in range(1, WEDGES) if _BC[j] * fv - _BS[j] * fu >= 0)
     return center, ring, wedge
 
@@ -83,7 +84,7 @@ CENTER, RING, WEDGE = _layout()
 def layout_sha():
     return hashlib.sha256(CENTER.tobytes() + RING.tobytes() + WEDGE.tobytes()).hexdigest()
 
-if layout_sha() != LAYOUT_SHA:
+if LAYOUT_SHA and layout_sha() != LAYOUT_SHA:
     raise RuntimeError("the detector layout differs from the published one")
 
 def read(power):

@@ -41,3 +41,15 @@ normal, 315 degrees.
 **W1 (60%).** One change only: the wedges begin outside ring 1 (beyond 17.5 frequency bins), where every wedge owns enough bins, and the bins
 inside go to no wedge (the rings still read them). With that change the disk's wedges differ by no more than a factor of 1.3, and E1, E2, E3 and
 E5 still hold.
+
+### Grade of W1, 8:49 AM (MEASURED; results/testcards_w1_run1.json and run2.json)
+
+- **W1: FAILED, and kept.** The disk's wedges now differ by a factor of 1.70, down from 34.4 but not within 1.3. E1, E2 (worst 0.0577%), E3 and E5 still
+  hold, so the change stays: it is a twentyfold improvement that breaks nothing. What is left is the grid itself: wedges near the axes own different
+  numbers of pixels from wedges on the diagonals (149 to 196 here), and the light near the inner edge is strong.
+
+## Open, filed but not run: W2
+
+**W2 (65%).** Split each frequency bin's power among the wedges by the area of the bin each wedge covers (16 by 16 sub-points a bin, counted in
+integers), the way Litton's continuous wedges collected light. The disk's wedges then differ by no more than 1.3. Expected cost: the grating's single
+bright bin can straddle two wedges, so E3's wedge share may fall below 95% (a real detector's spot has width too). Not run yet; anyone may.
