@@ -99,3 +99,16 @@ clear ground from a cloud deck. The diffraction eye earns its keep on the hard c
 lives. Exploratory, not predicted (results/film_explore.json): the rings alone, without brightness, get 85.3%, so the shape of the diffraction
 pattern carries the signal by itself; and with the training and held-out frames swapped, the eye gets 73.6% (rings alone 68.2%), because the
 even frames hold the northern farmland strips that look unlike the cloudy south. The honest range is about 74 to 86%, depending on which frames teach.
+
+### Grade of W2, 9:45 AM (MEASURED; results/testcards_w2_run1.json and run2.json; area mode is Eye(n, wedges="area"), the published mode unchanged)
+
+- **W2: FAILED.** With each bin split among the wedges by area, the disk's wedges still differ by a factor of 1.61, not 1.3 (W1's bins gave 1.70).
+  E1, E2 (worst 0.0549%), E5 and E6 still hold; as foreseen, the grating's single bright bin now straddles two wedges and E3's wedge share falls to
+  85.2%. The cause is not the binning: the disk's power per wedge repeats with the square grid's fourfold symmetry (about 1.17 times the average just
+  off the axes, 0.92 between), because a hard-edged disk drawn in square pixels has a stair-stepped edge whose spectrum carries the grid's shape;
+  and wedges 0 and 33 read low (0.73) because Litton's gap along the film's travel takes a strip of their area, by design. E4's card was a poor test of
+  evenness.
+
+**W3 (70%), filed before the card exists.** A card with no edge: a smooth radial ripple, 128 plus 100 times cos(2 pi r k0 / n) under a Gaussian of
+20 pixels, with k0 = 30 cycles per patch, so its spectrum is a thin ring of radius 30, far from the grid's limit. In area mode, wedges 1 to 32 (away
+from the gap) differ by no more than a factor of 1.1; in the bins mode they differ by more than that.

@@ -14,6 +14,8 @@ R_CENTER4 = 8            # center spot radius in quarter bins (2 bins). ASSUMPTI
 PINNED = {128: ("0f01140bf9f8b057b707beef007566450be92f6bd39ea432fc1350550fe31789", "e3548f165b14681596c7e0eb64020c86f62b7d0a10452c72c0c3b58192affdd1"),
           64: ("b4b23e0740e7e53a07bf2fbe8b8814f056c493e5cfebf2f92f2b9afa74c5510f", "d3729de0ea8351d3610a0bdeda686694627442a2f4d3acdc8a506159f20b7380")}
 
+PINNED_AREA = {}
+
 def _round_half_up(x):
     return int(math.floor(x + 0.5))
 
@@ -25,8 +27,8 @@ def _shift(a, q=Q):
     return (a + (1 << (q - 1))) >> q        # round half up, exact on integers
 
 class Eye:
-    def __init__(self, n=128):
-        self.n = n
+    def __init__(self, n=128, wedges="bins"):
+        self.n = n; self.mode = wedges
         self.r_max4 = 4 * (n // 2)                               # outer edge: the Nyquist radius
         self.ring_w4 = (self.r_max4 - R_CENTER4) // RINGS         # ASSUMPTION: equal-width rings
         assert R_CENTER4 + RINGS * self.ring_w4 == self.r_max4
@@ -38,6 +40,10 @@ class Eye:
         self.center, self.ring, self.wedge = self._layout()
         if n in PINNED and (self.table_sha(), self.layout_sha()) != PINNED[n]:
             raise RuntimeError("this machine builds a different eye than the published one (n=%d)" % n)
+        if wedges == "area":                                      # change W2: each bin split among the wedges by area
+            self.w_bin, self.w_wedge, self.w_count = self._area_weights()
+            if n in PINNED_AREA and self.area_sha() != PINNED_AREA[n]:
+                raise RuntimeError("this machine builds different area wedges than the published ones (n=%d)" % n)
 
     def _freq(self, i):
         return i if i < self.n // 2 else i - self.n
@@ -61,6 +67,28 @@ class Eye:
                     wedge[v, u] = sum(1 for j in range(1, WEDGES) if _BC[j] * fv - _BS[j] * fu >= 0)
         return center, ring, wedge
 
+    def _area_weights(self, sub=16):
+        """For each bin of the wedge half, how many of its sub by sub sub-points fall in each wedge (integers, out of sub*sub)."""
+        n, k = self.n, 2 * sub; off = np.arange(sub) * 2 + 1 - sub          # sub-point offsets, in units of 1/k of a bin
+        fu = np.array([self._freq(i) for i in range(n)]); fv = fu.copy()
+        V, U = np.meshgrid(np.arange(n), np.arange(n), indexing="ij")
+        sel = (fv[V] < 0)                                                    # the wedge half; the gap row fv == 0 is left out
+        bins = (V * n + U)[sel]; bu, bv = fu[U][sel], fv[V][sel]
+        X = (k * bu[:, None, None] + off[None, None, :]).repeat(sub, 1).reshape(len(bins), -1)
+        Y = (k * bv[:, None, None] + off[None, :, None]).repeat(sub, 2).reshape(len(bins), -1)
+        r2 = X * X + Y * Y; inside = (r2 > (2 * sub // 4 * self.wedge_r_min4) ** 2) & (r2 <= (2 * sub // 4 * self.r_max4) ** 2)
+        w = np.zeros(X.shape, np.int64)
+        for j in range(1, WEDGES):
+            w += (_BC[j] * Y - _BS[j] * X >= 0)
+        counts = np.zeros((len(bins), WEDGES), np.int64)
+        rows = np.repeat(np.arange(len(bins)), X.shape[1])
+        np.add.at(counts, (rows[inside.ravel()], w.ravel()[inside.ravel()]), 1)
+        nz = np.nonzero(counts)
+        return bins[nz[0]], nz[1], counts[nz]
+
+    def area_sha(self):
+        return hashlib.sha256(self.w_bin.tobytes() + self.w_wedge.tobytes() + self.w_count.tobytes()).hexdigest()
+
     def table_sha(self):
         h = hashlib.sha256()
         for a in (self.cos.tolist(), self.sin.tolist(), _BC, _BS):
@@ -81,7 +109,13 @@ class Eye:
     def read(self, power):
         out = [power[self.center].sum()]
         out += [power[self.ring == j].sum() for j in range(RINGS)]
-        out += [power[self.wedge == j].sum() for j in range(WEDGES)]
+        if self.mode == "area":
+            flat = power.reshape(-1)[self.w_bin]
+            terms = (flat * self.w_count) // 256 if flat.dtype.kind == "i" else flat * self.w_count / 256.0
+            wsum = np.zeros(WEDGES, flat.dtype); np.add.at(wsum, self.w_wedge, terms)
+            out += list(wsum)
+        else:
+            out += [power[self.wedge == j].sum() for j in range(WEDGES)]
         return out
 
     def look(self, patch):

@@ -17,14 +17,15 @@ def ring_of(r):      # which ring holds radius r (in bins)
 def wedge_of(deg):   # which wedge holds a direction between 180 and 360 degrees
     return int((deg - 180) // (180 / eye.WEDGES))
 
-def run():
-    out = {"table_sha": eye.table_sha(), "layout_sha": eye.layout_sha(), "cards": {}}
+def run(E=None):
+    E = E or eye._E
+    out = {"mode": E.mode, "table_sha": E.table_sha(), "layout_sha": E.layout_sha(), "cards": {}}
     grades = {}
     e2_ok = True; worst = 0.0; times = []
     for name, card in CARDS.items():
-        t = time.perf_counter(); a = eye.look(card); times.append(time.perf_counter() - t)
-        b = eye.look(card)
-        ref = eye.read(np.abs(np.fft.fft2(card.astype(np.float64))) ** 2)
+        t = time.perf_counter(); a = E.look(card); times.append(time.perf_counter() - t)
+        b = E.look(card)
+        ref = E.read(np.abs(np.fft.fft2(card.astype(np.float64))) ** 2)
         off = sum(a[1:])
         for i, (ai, ri) in enumerate(zip(a, ref)):
             if i > 0 and ri >= 0.001 * off:
@@ -48,7 +49,8 @@ def run():
     return out
 
 if __name__ == "__main__":
-    r = run()
-    json.dump(r, open(sys.argv[1] if len(sys.argv) > 1 else "results/testcards.json", "w"), indent=1)
+    area = "--area" in sys.argv; args = [a for a in sys.argv[1:] if a != "--area"]
+    r = run(eye.Eye(128, wedges="area") if area else None)
+    json.dump(r, open(args[0] if args else ("results/testcards_area.json" if area else "results/testcards.json"), "w"), indent=1)
     print(json.dumps({k: r[k] for k in ("grades", "E2_worst_relative_error", "E3", "E4", "E5", "E6_seconds_per_patch")}, indent=1))
     print({k: v["sha"][:16] for k, v in r["cards"].items()})
