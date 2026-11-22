@@ -1,0 +1,185 @@
+{
+ "mission": "1007-1",
+ "pass": "056D",
+ "camera": "aft",
+ "acquired": "1964-06-23",
+ "collection": "USGS EROS Declass 1 (1996), browse previews",
+ "frames": [
+  {
+   "entity_id": "DS1007-1056DA100",
+   "file": "film/browse/DS1007-1056DA100.jpg",
+   "bytes": 53620,
+   "sha256": "d2ed2c3ebce9028ef9a4d92a0d1f594d140938d9db8ef3f702bba7a981dc3abf",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA100.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA100/"
+  },
+  {
+   "entity_id": "DS1007-1056DA106",
+   "file": "film/browse/DS1007-1056DA106.jpg",
+   "bytes": 58613,
+   "sha256": "c595aa9ace9f49f5b8c01ef57f0e62dd1eb2b0d88e307779bf3d28184e0d4239",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA106.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA106/"
+  },
+  {
+   "entity_id": "DS1007-1056DA112",
+   "file": "film/browse/DS1007-1056DA112.jpg",
+   "bytes": 56449,
+   "sha256": "93b5f24f44672760b7d3bb24d0469dc281c22d707daf0f4b1dba9672fba4b4ea",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA112.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA112/"
+  },
+  {
+   "entity_id": "DS1007-1056DA118",
+   "file": "film/browse/DS1007-1056DA118.jpg",
+   "bytes": 51290,
+   "sha256": "c8f8249da1e62bcfb27db6d34064e5146b2fc821ae2f4441de8dadf0880be511",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA118.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA118/"
+  },
+  {
+   "entity_id": "DS1007-1056DA124",
+   "file": "film/browse/DS1007-1056DA124.jpg",
+   "bytes": 37053,
+   "sha256": "06b2b062bc6e91a0b7309bb89435619a721e79b0ff07b42b16aa02bd27bdb487",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA124.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA124/"
+  },
+  {
+   "entity_id": "DS1007-1056DA129",
+   "file": "film/browse/DS1007-1056DA129.jpg",
+   "bytes": 36569,
+   "sha256": "bc33c73f861e8edc34ca781f80a312bbd00bcafb3566b7d5e61f3d5fe606cdfe",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA129.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA129/"
+  },
+  {
+   "entity_id": "DS1007-1056DA130",
+   "file": "film/browse/DS1007-1056DA130.jpg",
+   "bytes": 34233,
+   "sha256": "2029e494b4d62b83cf17ad5d5677347752c58410344609b920ee705e966a8630",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA130.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA130/"
+  },
+  {
+   "entity_id": "DS1007-1056DA131",
+   "file": "film/browse/DS1007-1056DA131.jpg",
+   "bytes": 33300,
+   "sha256": "195122e980a6ed7ac4a7f008ff1bd21a96c772d0e2010c00d532c98e50424c19",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA131.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA131/"
+  },
+  {
+   "entity_id": "DS1007-1056DA132",
+   "file": "film/browse/DS1007-1056DA132.jpg",
+   "bytes": 31119,
+   "sha256": "d646023d7b59a534cce7ef40f397b28a9a35189784e945efe235224a05a60d8d",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA132.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA132/"
+  },
+  {
+   "entity_id": "DS1007-1056DA133",
+   "file": "film/browse/DS1007-1056DA133.jpg",
+   "bytes": 32432,
+   "sha256": "25b0b903cd4d20ae41a658fb77ac24821c8c6246bec19b749cf7b2f3d3601cf9",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA133.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA133/"
+  },
+  {
+   "entity_id": "DS1007-1056DA134",
+   "file": "film/browse/DS1007-1056DA134.jpg",
+   "bytes": 29530,
+   "sha256": "e2c4c0f660d9767f3bd216710458220d40a0aab8e75d774227b75b2660ada78c",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA134.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA134/"
+  },
+  {
+   "entity_id": "DS1007-1056DA135",
+   "file": "film/browse/DS1007-1056DA135.jpg",
+   "bytes": 29630,
+   "sha256": "a542387605afc6e67f4cf4de26aa1c29b792aaa49c916f01dc31e263fce4cb00",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA135.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA135/"
+  },
+  {
+   "entity_id": "DS1007-1056DA136",
+   "file": "film/browse/DS1007-1056DA136.jpg",
+   "bytes": 27651,
+   "sha256": "8bddd8566db7111cfd1713fccc0ee6de6901e8d1531d9872e264304ca7e3bb4f",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA136.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA136/"
+  },
+  {
+   "entity_id": "DS1007-1056DA137",
+   "file": "film/browse/DS1007-1056DA137.jpg",
+   "bytes": 23114,
+   "sha256": "66d0af3859ec139794d014c69394dcb0146ea4af017adaf4a78b3c04ff1994fe",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA137.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA137/"
+  },
+  {
+   "entity_id": "DS1007-1056DA138",
+   "file": "film/browse/DS1007-1056DA138.jpg",
+   "bytes": 18677,
+   "sha256": "64ef42de2844cf184296f9ed1dd4e18c400087e0a9e8ce11934e6700749eabb4",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA138.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA138/"
+  },
+  {
+   "entity_id": "DS1007-1056DA139",
+   "file": "film/browse/DS1007-1056DA139.jpg",
+   "bytes": 18084,
+   "sha256": "b55c7c380f3ff36f71c3eebfcac843ba3fedabfa01c946b3e73c0db55165d5a8",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA139.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA139/"
+  },
+  {
+   "entity_id": "DS1007-1056DA140",
+   "file": "film/browse/DS1007-1056DA140.jpg",
+   "bytes": 21469,
+   "sha256": "f7c89290d6223bd853368fcbae5a83da8e3ae509612ef8f3766ea02b77a0ac22",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA140.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA140/"
+  },
+  {
+   "entity_id": "DS1007-1056DA141",
+   "file": "film/browse/DS1007-1056DA141.jpg",
+   "bytes": 24059,
+   "sha256": "f5adcdb5cf047261e15b7ced02270f2f422eb8c9cb1e2792a59e41a98560177a",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA141.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA141/"
+  },
+  {
+   "entity_id": "DS1007-1056DA142",
+   "file": "film/browse/DS1007-1056DA142.jpg",
+   "bytes": 25217,
+   "sha256": "e4cdca1b3c4ceed8d0fff7383dcaaef64209268809c2f168708e3d993c1ff41d",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA142.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA142/"
+  },
+  {
+   "entity_id": "DS1007-1056DA143",
+   "file": "film/browse/DS1007-1056DA143.jpg",
+   "bytes": 30971,
+   "sha256": "e64ecb1b4d2930b6fefafe113d738ec439eddb25ca4457b8d1e6a46fdaae607d",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA143.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA143/"
+  },
+  {
+   "entity_id": "DS1007-1056DA144",
+   "file": "film/browse/DS1007-1056DA144.jpg",
+   "bytes": 35336,
+   "sha256": "c5aad2047df92c2559ceef1f61c2a5a618be827f555db4fd6359e89da743dd3d",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA144.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA144/"
+  },
+  {
+   "entity_id": "DS1007-1056DA145",
+   "file": "film/browse/DS1007-1056DA145.jpg",
+   "bytes": 36762,
+   "sha256": "7b2e566d88e7c7645bc452bdcf1124d7f237669b5db414d97f35c45f0e449fb3",
+   "source": "https://ims.cr.usgs.gov/browse/DIT/1007-1/056D/A/DS1007-1056DA145.jpg",
+   "metadata": "https://earthexplorer.usgs.gov/scene/metadata/full/5e839febdccb64b3/DS1007-1056DA145/"
+  }
+ ]
+}
