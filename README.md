@@ -48,10 +48,15 @@ before any code existed, then graded:
 | E4 | a disk spreads evenly over the 34 wedges | failed (34 times, then 1.7 times after W1) |
 | E5 | a diagonal bar lands in the wedge of its normal | held (100%) |
 | E6 | under 0.2 s a patch on a CPU | held (0.01 s) |
+| W1 | wedges beyond ring 1 make the disk even (within 1.3) | failed, kept (1.70, down from 34) |
+| W2 | wedges split by area make the disk even | failed (1.61): the disk card carries the pixel grid's pattern |
+| W3 | on an edgeless ring card, area-split wedges agree within 1.1 | held (within 2.4%; whole-bin wedges 54%) |
 
 E4 failed because a disk's light sits within a few frequency bins of the center, where a pixel grid cannot share it evenly among 34 wedges.
-Litton's wedges were continuous. W1 (wedges begin beyond ring 1) cut the spread twentyfold; W2 (split each bin among wedges by area) is filed and
-open.
+W1 (wedges begin beyond ring 1) cut the spread twentyfold. W2 split each bin among the wedges by area, as Litton's continuous wedges collected
+light (`Eye(n, wedges="area")`; the film results above used the whole-bin mode, which stays the default), and still failed on the disk, because a
+hard-edged disk drawn in square pixels has a spectrum with the grid's fourfold pattern. On a card with no edge (W3), the area-split wedges agree
+within 2.4%; the two beside the dividing gap read 0.82, the strip the gap takes by design.
 
 ## Run it
 

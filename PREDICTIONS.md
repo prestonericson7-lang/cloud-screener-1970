@@ -112,3 +112,9 @@ even frames hold the northern farmland strips that look unlike the cloudy south.
 **W3 (70%), filed before the card exists.** A card with no edge: a smooth radial ripple, 128 plus 100 times cos(2 pi r k0 / n) under a Gaussian of
 20 pixels, with k0 = 30 cycles per patch, so its spectrum is a thin ring of radius 30, far from the grid's limit. In area mode, wedges 1 to 32 (away
 from the gap) differ by no more than a factor of 1.1; in the bins mode they differ by more than that.
+
+### Grade of W3, 9:46 AM (MEASURED; results/w3_ring.json, w3_ring.py)
+
+- **W3: HELD.** On the edgeless ring card, area mode's wedges 1 to 32 differ by a factor of 1.0244 (within 2.4%); the bins mode's by 1.542. Wedges 0 and 33
+  read 0.818 of the mean in area mode, the strip Litton's gap takes, by design. Ring 3 (radius 30) holds 98.6% of the ring half's power. So the
+  area-split wedges do what Litton's continuous wedges did; the disk card's unevenness was the disk's own pixel grid.

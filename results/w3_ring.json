@@ -1,0 +1,41 @@
+{
+ "bins": {
+  "same_twice": true,
+  "sha": "644492e720f69c91d2a3cd232bb895ce30456f998f265b5a7db19d0dfed68cdd",
+  "max_over_min_wedges_1_to_32": 1.542,
+  "wedge_0_and_33_vs_mean": [
+   0.719,
+   0.719
+  ],
+  "ring_share": [
+   0.0003,
+   0.0013,
+   0.0124,
+   0.9858,
+   0.0002,
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "area": {
+  "same_twice": true,
+  "sha": "81b9148be7de0d5b7ce288bc4c14f4135b3704ae96404e9ce689535bc8abdb60",
+  "max_over_min_wedges_1_to_32": 1.0244,
+  "wedge_0_and_33_vs_mean": [
+   0.818,
+   0.818
+  ],
+  "ring_share": [
+   0.0003,
+   0.0013,
+   0.0124,
+   0.9858,
+   0.0002,
+   0.0,
+   0.0,
+   0.0
+  ]
+ },
+ "W3_held": true
+}
