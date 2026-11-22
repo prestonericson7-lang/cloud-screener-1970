@@ -1,0 +1,32 @@
+{
+ "n_patches": 506,
+ "counts": {
+  "C": 166,
+  "P": 166,
+  "F": 123,
+  "?": 51
+ },
+ "F1_fixed_rule_heldout": 0.6634615384615384,
+ "F2_trained_two_class_heldout": 0.9903846153846154,
+ "F3_trained_three_class_heldout": 0.8578680203045685,
+ "F3_confusion_rows_truth_cols_pred": {
+  "C": {
+   "C": 40,
+   "P": 5,
+   "F": 0
+  },
+  "P": {
+   "C": 11,
+   "P": 76,
+   "F": 6
+  },
+  "F": {
+   "C": 1,
+   "P": 5,
+   "F": 53
+  }
+ },
+ "F4_three_class_without_wedges_heldout": 0.8730964467005076,
+ "F5_brightness_three_class_heldout": 0.6903553299492385,
+ "brightness_two_class_heldout": 1.0
+}

@@ -54,19 +54,38 @@ open.
 
 ## Run it
 
-Python 3 and NumPy. `python testcards.py` writes `results/testcards.json`. Your fingerprints should match these exactly:
+Python 3, NumPy and Pillow. `python testcards.py` writes `results/testcards.json`; `python film_run.py` reads the film and writes
+`results/film_results.json` (the eye's readings are exact; the perceptron trains in float64 in a fixed order). Your fingerprints should match these exactly:
 
 - grating `21fca8ee051461c033868b4054b496d75a2d03f0570cc6c2ae0969bbe4354aee`
 - disk `646b925b1702e767420cd50e057e2756eda47195338a9d320517f9c0b84b025d`
 - bar `b702b31a0b5382cd6e27cfcc0817669e73d8e10702f591282073dfe35d5bae32`
 
-## Next: the film (not done yet)
+## The film ([film_run.py](film_run.py), [film/](film/))
 
-Declassified CORONA reconnaissance frames from 1960 to 1972 (USGS EarthExplorer). Frames with cloud and without, cut into patches, every patch
-labeled clear, partly cloudy or cloudy by eye before any machine sees it; predictions filed first; then a fixed rule (power in the inner rings
-against the outer: cloud is bright and smooth, ground is textured) and a trained rule (a linear threshold unit taught on examples, the kind its
-era's learning machines used), scored only on patches held out from training. After that, on the same footing: Scope Incorporated's prenormalizer
-(US patent 3,566,080), the front end of the CONFLEX I learning machine the CIA tested on rotated railyards in 1965.
+Twenty-two frames of one CORONA strip: mission 1007-1, pass 56-D, aft camera, June 23, 1964, over central Russia, as USGS serves them without
+sign-in (browse previews, 1,480 by 115 pixels a frame, about 135 m of ground a pixel; the full scans need a sign-in that this machine's network
+could not complete). 506 patches of 64 by 64 pixels, every one labeled clear, partly cloudy or cloudy by eye and committed before the eye read any
+(51 left out as uncertain). Even frames taught the rules; odd frames were held out and scored. The predictions were committed before any film was
+downloaded.
+
+| | Prediction | Result |
+|---|---|---|
+| F1 | a fixed ring rule tells clear from cloudy, 90% or better | failed (66%) |
+| F2 | a trained rule tells clear from cloudy, 90% or better | held (99%) |
+| F3 | the trained rule on all three classes, 70% or better | held (85.8%) |
+| F4 | the wedges add little | held (87.3% without them) |
+| F5 | the eye beats brightness alone by 5 points or more | held (85.8% against 69.0%) |
+
+Said plainly: brightness alone tells clear ground from a cloud deck on every one of these held-out patches. The diffraction eye earns its keep on
+partial cloud, where it beats brightness by 17 points, and the rings alone, without brightness, do almost as well as the whole eye (85.3%). With the
+training and held-out frames swapped, the eye gets 73.6%, so the honest range is about 74 to 86%, depending on which frames teach.
+
+## Next
+
+The full scans of the same frames, from a machine that can sign in to EarthExplorer (the 1970 device read original film, far finer than these
+previews); W2; and then Scope Incorporated's prenormalizer (US patent 3,566,080), the front end of the CONFLEX I learning machine the CIA tested on
+rotated railyards in 1965 (51 of 54).
 
 ## What this is and is not
 

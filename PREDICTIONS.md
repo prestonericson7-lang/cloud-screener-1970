@@ -84,3 +84,18 @@ spot, the gap along the film's travel) and gets its own pinned fingerprints. Fra
 DA118 and DA124 for more clear ground. Each strip's middle 64 rows are cut into 23 patches. Training and held-out sets: even frame numbers train,
 odd frame numbers are held out, fixed now. A patch whose label is uncertain by eye is marked so and left out of every score. The predictions above are
 not changed. The full-scan run stays open for a machine that can sign in.
+
+### Grades of F1 to F5, 9:24 AM (MEASURED; results/film_results.json; held-out frames only, the split fixed in the amendment)
+
+- **F1: FAILED.** The fixed ring rule tells clear from cloudy on 66.3% of held-out patches, not 90%. The inner rings' share of the spectrum does not
+  separate a cloud deck from farmland by itself.
+- **F2: HELD.** The trained rule: 99.0%, and well above the fixed rule.
+- **F3: HELD.** All three classes: 85.8%. Clear 40 of 45 right; partly cloudy 76 of 93 (11 called clear, 6 cloudy); cloudy 53 of 59.
+- **F4: HELD.** Without the 34 wedges: 87.3%, a change of +1.5 points. Clouds have no direction; the rings carry the signal.
+- **F5: HELD.** Brightness alone, three classes: 69.0%; the eye's trained rule beats it by 16.8 points.
+
+**What the grades leave out, said plainly.** On clear against cloudy, brightness alone gets 100% of held-out patches right: a light meter can tell
+clear ground from a cloud deck. The diffraction eye earns its keep on the hard case, partial cloud, which is where a screener for target locations
+lives. Exploratory, not predicted (results/film_explore.json): the rings alone, without brightness, get 85.3%, so the shape of the diffraction
+pattern carries the signal by itself; and with the training and held-out frames swapped, the eye gets 73.6% (rings alone 68.2%), because the
+even frames hold the northern farmland strips that look unlike the cloudy south. The honest range is about 74 to 86%, depending on which frames teach.
