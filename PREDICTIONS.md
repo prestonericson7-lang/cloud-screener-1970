@@ -53,3 +53,23 @@ E5 still hold.
 **W2 (65%).** Split each frequency bin's power among the wedges by the area of the bin each wedge covers (16 by 16 sub-points a bin, counted in
 integers), the way Litton's continuous wedges collected light. The disk's wedges then differ by no more than 1.3. Expected cost: the grating's single
 bright bin can straddle two wedges, so E3's wedge share may fall below 95% (a real detector's spot has width too). Not run yet; anyone may.
+
+## The film: predictions filed 8:59 AM, before any film was downloaded
+
+The film: CORONA mission 1007-1, pass 56-D, aft camera, June 23, 1964, over central Russia (about 52.6 to 50.5 degrees north, 38 east), frames
+DS1007-1056DA130 (mostly clear), DA135 (partly covered) and DA138 (a solid deck over two-thirds of the frame), chosen from USGS browse images; more
+frames of the same pass may follow. Each frame is cut into 128 by 128 patches, and every patch is labeled clear, partly cloudy or cloudy by eye, before
+any machine reads it. Patches are split into training and held-out sets by frame position, fixed before any score is computed. Two decision rules,
+neither claimed to be the 1970 original: the fixed rule (the share of off-center power in the inner rings against the outer, with a threshold set on
+the training patches), and the trained rule (a linear threshold unit on the logarithms of the 43 readings, taught by the perceptron rule).
+
+**F1 (80%).** Clear against cloudy (partly cloudy left out), held-out patches: the fixed rule gets at least 90% right.
+
+**F2 (70%).** The trained rule gets at least 90% on the same patches, and at least as many as the fixed rule.
+
+**F3 (55%).** All three classes, held-out patches: the trained rule gets at least 70% right.
+
+**F4 (70%).** The wedges add little to cloud screening: dropping the 34 wedges changes the trained rule's three-class score by less than 5 points.
+
+**F5 (50%).** The honest baseline: brightness alone (the center spot) with a threshold set the same way. The eye's trained rule beats it by at least
+5 points on three classes. If it does not, the diffraction eye bought the 1970 machine nothing that a light meter could not.
