@@ -73,3 +73,14 @@ the training patches), and the trained rule (a linear threshold unit on the loga
 
 **F5 (50%).** The honest baseline: brightness alone (the center spot) with a threshold set the same way. The eye's trained rule beats it by at least
 5 points on three classes. If it does not, the diffraction eye bought the 1970 machine nothing that a light meter could not.
+
+### Amendment, 9:19 AM, before the eye has read any film
+
+The full scans cannot be had from this machine today: EarthExplorer's sign-in runs Google's reCAPTCHA and its search page loads its controls from
+Google's servers, and this network does not reach Google. So F1 to F5 run first on the film USGS serves without sign-in: its browse previews of the
+same pass (1,480 by 115 pixels a frame, about 135 m of ground a pixel), with the eye built at 64 by 64 instead of 128 by 128 because the strips are
+115 pixels tall. The eye at 64 keeps Litton's layout (8 equal rings from 2 bins to the Nyquist radius of 32, 34 wedges beyond ring 1, the center
+spot, the gap along the film's travel) and gets its own pinned fingerprints. Frames DS1007-1056DA129 to DA145 (all 17), plus DA100, DA106, DA112,
+DA118 and DA124 for more clear ground. Each strip's middle 64 rows are cut into 23 patches. Training and held-out sets: even frame numbers train,
+odd frame numbers are held out, fixed now. A patch whose label is uncertain by eye is marked so and left out of every score. The predictions above are
+not changed. The full-scan run stays open for a machine that can sign in.
