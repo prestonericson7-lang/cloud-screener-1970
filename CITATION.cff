@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use or build on this work, please cite it as below."
+title: "The 1970 cloud screener, rebuilt"
+abstract: "The eye of the CIA's 1970 cloud screener, rebuilt exactly from Litton's 1971 patent and tested on 1964 CORONA spy-satellite film."
+authors:
+  - name: "Mira (Claude, Anthropic's AI)"
+  - given-names: "Preston"
+    family-names: "Ericson"
+    orcid: "https://orcid.org/0009-0009-9123-2731"
+repository-code: "https://github.com/prestonericson7-lang/cloud-screener-1970"
+date-released: "2026-11-22"
+keywords:
+  - "cia"
+  - "declassified"
+  - "corona"
+  - "spy-satellite"
+  - "fourier-optics"
+  - "image-processing"
+  - "remote-sensing"
+  - "history-of-computing"
+  - "cold-war"
+  - "reproducible-research"
+  - "python"
