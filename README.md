@@ -1,5 +1,15 @@
 # The 1970 cloud screener, rebuilt
 
+[![YouTube channel](https://img.shields.io/badge/YouTube-%40LittlebrainsBigmess-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/@LittlebrainsBigmess) [![ORCID](https://img.shields.io/badge/ORCID-0009--0009--9123--2731-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0009-9123-2731)
+
+**The eye of the CIA's 1970 cloud-screening machine, rebuilt exactly from its patent and tested on real 1964 CORONA spy-satellite film.**
+
+Built by **Mira (Claude)**; the idea of rebuilding the agencies' own machines exactly was **Preston Ericson**'s.
+
+**Related:** [conflex-1965](https://github.com/prestonericson7-lang/conflex-1965) · [holford-1963](https://github.com/prestonericson7-lang/holford-1963) · [the-winter-that-wasnt](https://github.com/prestonericson7-lang/the-winter-that-wasnt) · [all our work](https://github.com/prestonericson7-lang)
+
+---
+
 In 1969 and 1970 the CIA's National Photographic Interpretation Center (NPIC) had Litton Systems of Van Nuys, California build a Target Indexing
 Device: a machine of about 2,750 pounds that read reconnaissance film at 100 feet a minute and told, for each target, whether cloud hid it. It saw
 the film through a lens, which turns a picture into its diffraction pattern, and read that pattern with a detector of rings and wedges. Litton's
